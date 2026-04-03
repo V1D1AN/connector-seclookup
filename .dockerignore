@@ -1,0 +1,13 @@
+.git
+.gitignore
+.env
+.env.sample
+*.md
+LICENSE
+docker-compose.yml
+docker-compose.override.yml
+config.yml.sample
+__pycache__
+.venv
+.idea
+.vscode

@@ -1,0 +1,23 @@
+version: "3"
+services:
+  connector-seclookup:
+    build: .
+    container_name: connector-seclookup
+    restart: unless-stopped
+    environment:
+      # --- OpenCTI ---
+      - OPENCTI_URL=${OPENCTI_URL}
+      - OPENCTI_TOKEN=${OPENCTI_TOKEN}
+      # --- Connector ---
+      - CONNECTOR_ID=${CONNECTOR_ID}
+      - CONNECTOR_NAME=SecLookup
+      - CONNECTOR_SCOPE=Domain-Name,IPv4-Addr,Url
+      - CONNECTOR_TYPE=INTERNAL_ENRICHMENT
+      - CONNECTOR_AUTO=false
+      - CONNECTOR_CONFIDENCE_LEVEL=50
+      - CONNECTOR_LOG_LEVEL=info
+      # --- SecLookup ---
+      - SECLOOKUP_API_KEY=${SECLOOKUP_API_KEY}
+      - SECLOOKUP_API_URL=https://api.seclookup.com/v1
+      - SECLOOKUP_SCORE_THRESHOLD=50
+      - SECLOOKUP_MAX_TLP=TLP:AMBER

@@ -1,0 +1,18 @@
+opencti:
+  url: "http://opencti:8080"
+  token: "ChangeMe"
+
+connector:
+  id: "ChangeMe"
+  type: "INTERNAL_ENRICHMENT"
+  name: "SecLookup"
+  scope: "Domain-Name,IPv4-Addr,Url"
+  auto: false
+  confidence_level: 50
+  log_level: "info"
+
+seclookup:
+  api_key: "ChangeMe"
+  api_url: "https://api.seclookup.com/v1"
+  score_threshold: 50
+  max_tlp: "TLP:AMBER"
